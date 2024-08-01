@@ -1,5 +1,5 @@
-from django.views.generic import TemplateView ,ListView
-from .models import Post
+from django.views.generic import TemplateView ,ListView,DetailView
+from .models import Post , Blog 
 
 class HomePageView(ListView):
     model = Post
@@ -9,3 +9,11 @@ class HomePageView(ListView):
 
 class AboutPageView(TemplateView):
     template_name = 'about.html'
+
+class BlogPageView(ListView):
+    model = Blog
+    template_name = 'blog.html'
+
+class BlogDetailView(DetailView): 
+    model = Blog
+    template_name = 'blog_detail.html'
