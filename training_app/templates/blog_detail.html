@@ -3,4 +3,9 @@
   <h2>{{ object.title }}</h2>
   <p>{{ object.body }}</p>
 </div>
+<a class="bt" href="{% url 'blog_edit' object.pk %}">+ Edit Blog Post</a>
+<p>
+  <a class="bt" href="{% url 'blog_delete' object.pk %}">+ Delete Blog Post</a>
+</p>
+
 {% endblock content %}

@@ -1,4 +1,10 @@
-{% extends 'base.html' %} {% block content %} {% for blog in object_list %}
+{% extends 'base.html' %} {% block content %}
+<header>
+  | <a href="{% url 'blog_new' %}">New Blog</a> |
+ 
+</header>
+{% for blog in object_list %}
+
 <div class="post-entry">
   <h2><a href="{% url 'blog_detail' blog.pk %}">{{ blog.title }}</a></h2>
   <p>{{ blog.body }}</p>
